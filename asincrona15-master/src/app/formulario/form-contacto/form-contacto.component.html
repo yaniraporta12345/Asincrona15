@@ -1,0 +1,95 @@
+<!-- <body class="container">
+    <section class="text-center">
+        <h1 class="color">Formulario de Registro</h1>
+        <form>
+            <input type="text" placeholder="Nombres" name="nombre" [(ngModel)]="nom">
+            <input type="text" placeholder="Apellidos" name="apellido" [(ngModel)]="ape">
+            <input type="text" placeholder="Carrera" name="carrera" [(ngModel)]="car">
+            <input type="button" value="Enviar" (click)="Agregar()">   
+        </form>
+    </section>
+   <section class="text-center">
+    <h2>Tabla de Registrados</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nro</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Carrera</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let fila of datos; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{fila.Nombre}}</td>
+                <td>{{fila.Apellido}}</td>
+                <td>{{fila.Carrera}}</td>
+                <td>
+                    <button class="btn btn-danger" value={{i}} (click)="Eliminar(i)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   </section>
+</body> -->
+
+<section class="container-sm mt-5 ">
+    <h2 class="text-center">Formulario de Registro</h2>
+    <form class="border p-5 mt-5">
+    
+        <section class="form-group m-3">
+                <label for="nombre">Nombre:</label>
+            <section>
+                <input class="form-control" placeholder="Ingrese su nombre" type="text" id="nombre" [(ngModel)]="nombre" name="nombre">
+            </section>
+        </section>
+    
+        <section class="form-group m-3">
+                <label for="apellido">Apellido:</label>
+            <section>
+                <input class="form-control" placeholder="Ingrese su apellido" type="text" id="apellido" [(ngModel)]="apellido" name="apellidos">
+            </section>
+        </section>
+        <section class="form-group m-3">
+                <label for="carrera">Carrera:</label>
+            <section>
+                <input class="form-control" placeholder="Ingrese su carrera" type="text" id="carrera" [(ngModel)]="carrera" name="carrera">
+            </section>
+        </section>
+        <section class="form-group text-center mt-3">
+            <button type="button" class="btn btn-outline-dark rounded-pill btn-lg col-4" (click)="insertarDatos()">Guardar</button>
+        </section>
+    </form>
+    </section>
+    
+    <section class="form-group m-3 text-center">
+    <section class="d-block">
+    </section>
+    <section class="d-block">
+    <table class="table table-striped border rounded w-75 mx-auto ">
+    
+    <thead>
+    <tr>
+    <th class="text-center">Nombre</th>
+    <th class="text-center">Apellidos</th>
+    <th class="text-center">Carrera</th>
+    <th class="text-center">#</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let estudiante of estudiante; let i = index">
+    <td class="text-center">{{estudiante.nombre}}</td>
+    <td class="text-center">{{estudiante.apellidos}}</td>
+    <td class="text-center">{{estudiante.carrera}}</td>
+    <td class="d-flex justify-content-center">
+    <button type="button" class="btn btn-danger" (click)="eliminarEstudiante(i)">Eliminar</button>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    <section class="d-flex justify-content-center text-center" id="alert-container"></section>
+    </section>
+    </section>
+    
